@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RingBearer.Mobile.Views.LoginPage"
+             xmlns:viewmodels="clr-namespace:RingBearer.Mobile.ViewModels.Interfaces"
+             xmlns:shared="clr-namespace:RingBearer.Mobile.SharedComponents"               
+             x:DataType="viewmodels:ILoginViewModel" >
+
+    <ScrollView>
+        
+        <Grid RowDefinitions="Auto,*,Auto" VerticalOptions="Fill" Padding="20.10">
+
+            <!--Header-->
+            <VerticalStackLayout Grid.Row="0" >
+
+                <!--app logo-->
+                <Image
+                  x:Name="LogoImage"
+                  Source="{AppThemeBinding Light=applogodark.png, Dark=applogo.png}"
+                  Margin="0, 30, 0, 0"
+                  HeightRequest="185"
+                  Aspect="AspectFit"
+                  SemanticProperties.Description="Ring bearer logo" />
+
+                <!--app name and subtitle -->
+                <VerticalStackLayout Margin="0,0,0,20">
+
+                    <Label
+                      Text="Ring Bearer"
+                      Style="{StaticResource Headline}"
+                      SemanticProperties.HeadingLevel="Level1" />
+
+                    <Label 
+                      Style="{StaticResource SubHeadline}"
+                      FontSize="18"
+                      Text="{Binding LoginSubtitle}"
+                      SemanticProperties.HeadingLevel="Level2"/>
+
+                </VerticalStackLayout>
+            
+            </VerticalStackLayout>
+
+            <!--Login form-->
+            <VerticalStackLayout Grid.Row="1">
+                
+                <!--login from-->
+                <VerticalStackLayout>
+
+                    <!--password-->
+                    <VerticalStackLayout>
+
+                        <!--Password entry-->
+                        <Border Background="{AppThemeBinding Light={StaticResource FieldBackGroundColor}, Dark={StaticResource FieldBackGroundColorDark}}">
+                            
+                            <Grid ColumnDefinitions="*, Auto">
+
+                                <Entry 
+                                     x:Name="PasswordEntry" 
+                                     IsPassword="{Binding IsPasswordHidden}"
+                                     Placeholder="{Binding PasswordPlaceholder}" 
+                                     Text="{Binding Password}" />
+
+                                <ImageButton
+                                     Source="{AppThemeBinding Light=eyedark.png, Dark=eye.png}"
+                                     Grid.Column="1" 
+                                     BackgroundColor="Transparent"
+                                     HorizontalOptions="End"
+                                     VerticalOptions="Center"
+                                     WidthRequest="40"     
+                                     HeightRequest="40" 
+                                     Padding="8"
+                                     Clicked="OnTogglePasswordVisibilityClicked"/>
+                            </Grid>
+                        </Border>
+
+                        <!--Password error message-->
+                        <Label 
+                            x:Name="ErrorPasswordLabel"
+                            TextColor="Red"
+                            FontSize="12"
+                            HorizontalOptions="Start"
+                            Padding="10,2,0,10"
+                            Text="{Binding PasswordError}"/>
+
+                    </VerticalStackLayout>
+
+                    <!--confirm-->
+                    <VerticalStackLayout IsVisible="{Binding IsFirsrtLogin}">
+
+                        <!--Confirm password entry-->
+                        <Border Background="{AppThemeBinding Light={StaticResource FieldBackGroundColor}, Dark={StaticResource FieldBackGroundColorDark}}">
+                            <Grid ColumnDefinitions="*, Auto">
+
+                                <Entry 
+                                    x:Name="ConfirmPasswordEntry" 
+                                    Text="{Binding ConfirmPassword}"
+                                    IsPassword="{Binding IsConfirmPasswordHidden}"                     
+                                    Placeholder="{Binding ConfirmPasswordPlaceHolder}" />
+
+                                <ImageButton
+                                    Source="{AppThemeBinding Light=eyedark.png, Dark=eye.png}"
+                                    Grid.Column="1" 
+                                    BackgroundColor="Transparent"
+                                    HorizontalOptions="End"
+                                    VerticalOptions="Center"
+                                    WidthRequest="40"
+                                    HeightRequest="40"
+                                    Padding="8"
+                                    Clicked="OnToggleConfirmPasswordVisibilityClicked"/>
+                            </Grid>
+                        </Border>
+
+                        <!--Confirm password error message-->
+                        <Label 
+                            x:Name="ErrorConfirmPasswordLabel"
+                            TextColor="Red"
+                            FontSize="12"
+                            HorizontalOptions="Start"
+                            Padding="10,2,0,10"
+                            Text="{Binding ConfirmPasswordError}" />
+
+                    </VerticalStackLayout>
+
+                    <!--Login button-->
+                    <Button 
+                        x:Name="LoginButton" 
+                        Text="{Binding LoginButtonText}" 
+                        Clicked="OnLoginClicked"
+                        IsEnabled="{Binding IsLoginButtonEnabled}"
+                        Margin="0,0,0,10"/>
+
+                    <!--error message-->
+                    <Border  
+                        IsVisible="{Binding IsLoginErrorVisible}"
+                        Background="{StaticResource ErrorAlertBackground}" 
+                        Padding="10,5" 
+                        StrokeShape="RoundRectangle 5">
+                        <Label
+                            TextColor="White"
+                            Text="{Binding LoginError}"
+                            FontSize="12"
+                            HorizontalOptions="Center"  />
+                    </Border>
+
+                </VerticalStackLayout>
+        
+                <!--spinner-->
+                <HorizontalStackLayout 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Start" 
+                    IsVisible="{Binding IsRefreshing}">
+                    <shared:SpinnerComponent  />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+            <!--warning-->
+            <VerticalStackLayout Grid.Row="2">
+
+                <Border 
+                    VerticalOptions="End"
+                    IsVisible="{Binding IsFirsrtLogin}" 
+                    Background="{StaticResource WarningBackround}" 
+                    Padding="8" 
+                    Margin="0,20,0,0">
+
+                    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                        <Image Source="warningdark.png" WidthRequest="50" HeightRequest="50" />
+
+                        <Label  Grid.Column="1"
+                                 Text="{Binding WarningText}"
+                                 FontSize="13"
+                                 TextColor="{StaticResource WarningTextColor}"
+                                 FontAttributes="Bold"
+                                 Padding="10,5"
+                                 LineBreakMode="WordWrap"
+                                 HorizontalOptions="Center"/>
+                    </Grid>
+                </Border>
+
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

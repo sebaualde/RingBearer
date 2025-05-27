@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:RingBearer.Mobile.ViewModels.Interfaces"
+             x:DataType="viewmodels:IAboutViewModel"
+             x:Class="RingBearer.Mobile.Views.AboutPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10">
+         
+            <!--version-->
+            <VerticalStackLayout Padding="20,0,0,0">
+                <Label Text="{Binding VersionText}" FontAttributes="Bold" />
+                <Label Text="{Binding DeveloperText}" />
+                <Label Text="{Binding PlatformsText}"  />
+                <Label Text="{Binding LicenseText}" />
+            </VerticalStackLayout>
+
+            <!--What is it?-->
+            <Label Text="{Binding WhatIsItTitle}" FontSize="Subtitle" />
+            <VerticalStackLayout Padding="20,0,0,0">
+                <Label
+                    Text="{Binding WhatIsItText}"  
+                    LineBreakMode="WordWrap" 
+                />
+            </VerticalStackLayout>
+
+            <!--Features-->
+            <Label Text="{Binding FeaturesTitle}" FontSize="Subtitle" />
+            <VerticalStackLayout Padding="20,0,0,0">
+                <Label
+                    Text="{Binding Functionality1Text}"   
+                    LineBreakMode="WordWrap"
+                />
+                <Label
+                    Text="{Binding Functionality2Text}"
+                    LineBreakMode="WordWrap"
+                />
+                <Label
+                    Text="{Binding Functionality3Text}"
+                    LineBreakMode="WordWrap"
+                />
+                <Label
+                    Text="{Binding Functionality4Text}"
+                    LineBreakMode="WordWrap"
+                />
+                <Label
+                    Text="{Binding Functionality5Text}" 
+                    LineBreakMode="WordWrap"
+                />
+            </VerticalStackLayout>
+
+            <!--Important-->
+            <Label Text="{Binding ImportantTitle}" FontSize="Subtitle" />
+            <VerticalStackLayout Padding="20,0,0,0">
+                <Label
+                    Text="{Binding Important1Text}"  
+                    LineBreakMode="WordWrap" 
+                />
+                <Label
+                    Text="{Binding Important2Text}"
+                    LineBreakMode="WordWrap" 
+                />
+                <Label
+                    Text="{Binding Important3Text}"
+                    LineBreakMode="WordWrap" 
+                />
+            </VerticalStackLayout>
+
+            <!--Autor-->
+            <Label Text="{Binding AutorTitle}" FontSize="Subtitle" />
+            <VerticalStackLayout Padding="20,0,0,20">
+                <Label
+                    Text="{Binding AutorText}"
+                    LineBreakMode="WordWrap" 
+                />
+            </VerticalStackLayout>
+
+            <Button Text="{Binding LearnMoreText}" Clicked="OnLearnMoreClicked" />
+            <Button Text="{Binding PrivacyPolicyText}" Clicked="OnLearnPrivacyPolicyClicked" />
+            <Button Text="{Binding TermsServiceText}" Clicked="OnTermsServiceClicked" />
+            <Button Text="{Binding CheckForUpdatesText}" Clicked="OnCheckForUpdatesClicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

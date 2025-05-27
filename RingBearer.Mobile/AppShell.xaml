@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="RingBearer.Mobile.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:RingBearer.Mobile.Views"
+    xmlns:viewmodels="clr-namespace:RingBearer.Mobile.ViewModels.Interfaces"
+    xmlns:components="clr-namespace:RingBearer.Mobile.SharedComponents"  
+    x:DataType="viewmodels:IShellViewModel"
+    x:Name="model"
+    Shell.FlyoutBackgroundColor="{AppThemeBinding Light={StaticResource PageBackgroundColor}, Dark={StaticResource SecondaryDark}}"
+    Shell.Title="Ring Bearer"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.FlyoutWidth="300">
+
+    <Shell.TitleView>
+        <Grid ColumnDefinitions="*, Auto">
+            <Label 
+                Margin="20,0,0,0"
+                Text="{Binding CurrentPageTitle}" 
+                TextColor="{StaticResource PrimaryDarkText}"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"
+                FontSize="Title"/>
+
+            <Image Grid.Column="1" WidthRequest="30" HeightRequest="30" Margin="0,0,15,0" Aspect="AspectFit" Source="applogo.png" />
+
+        </Grid>
+    </Shell.TitleView>
+
+    <!--#region Cabezal -->
+
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+
+            <Grid 
+                ColumnDefinitions="Auto, *, Auto"
+                ColumnSpacing="10"
+                BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryDark}}"                
+                Padding="10" 
+                HorizontalOptions="Center"
+                WidthRequest="300">
+
+                <!--logo-->
+                <Image Grid.Column="0" WidthRequest="50" HeightRequest="50" Aspect="AspectFit" Source="applogo.png" />
+
+                <!--app name-->
+                <VerticalStackLayout Grid.Column="1" VerticalOptions="Center">
+                    <Label  Text="Ring Bearer"  
+                                TextColor="White"  
+                                FontAttributes="Bold"  
+                                FontSize="Title"  
+                                HorizontalTextAlignment="Start"  
+                                VerticalTextAlignment="Center" />
+
+                    <Label  Text="{Binding AppSubtitle}"  
+                                TextColor="Wheat"  
+                                FontAttributes="Bold"  
+                                FontSize="Default"  
+                                HorizontalTextAlignment="Start"  
+                                VerticalTextAlignment="Center" />
+                </VerticalStackLayout>
+
+                <!--theme selection-->
+                <ImageButton 
+                    Grid.Column="2" 
+                    WidthRequest="50"
+                    HeightRequest="50"
+                    CornerRadius="50"
+                    Padding="10"
+                    Margin="10"
+                    Source="{AppThemeBinding Light=moon.png, Dark=sun.png}" 
+                    Clicked="OnToggleThemeClicked" />
+
+            </Grid>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+
+    <!--#endregion-->
+
+
+
+    <Shell.FlyoutFooter>
+        <VerticalStackLayout  Background="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryDark}}">
+
+            <Button   
+                   Text="{Binding CloseText}"   
+                   BackgroundColor="{StaticResource Gray900}"   
+                   TextColor="{StaticResource PrimaryDarkText}"   
+                   FontSize="Medium"   
+                   CornerRadius="0" Clicked="OnLogoutClicked" IsVisible="{Binding ShowLogoutButton}" />
+
+            <components:FooterComponent HorizontalOptions="Center" />
+        </VerticalStackLayout>
+    </Shell.FlyoutFooter>
+</Shell>

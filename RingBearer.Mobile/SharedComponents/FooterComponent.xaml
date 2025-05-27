@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:RingBearer.Mobile.SharedComponents"            
+             x:Class="RingBearer.Mobile.SharedComponents.FooterComponent"
+             x:DataType="local:FooterComponent"
+             Padding="8">
+
+    <Grid ColumnDefinitions="Auto,*" >
+        <Image Grid.Column="0" WidthRequest="40" HeightRequest="40" Source="sursoft.png" />
+
+        <StackLayout Grid.Column="1" Padding="5">
+            <HorizontalStackLayout Spacing="10">
+                <Label Text="{Binding DevelopedText}"  
+                        VerticalOptions="Center"
+                        TextColor="{StaticResource White}" />
+
+                <Label VerticalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span  Text="Sursoft.org"
+                                    TextDecorations="Underline"
+                                    TextColor="Orange">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OpenSursoftPage"  />
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </HorizontalStackLayout>
+            <Label Text="Versión 1.0.0"  
+                    TextColor="{StaticResource Gray300}"  
+                    HorizontalTextAlignment="Start" />
+        </StackLayout>
+    </Grid>
+</ContentView>

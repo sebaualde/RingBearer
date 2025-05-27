@@ -1,0 +1,570 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddOrUpdHelpText1" xml:space="preserve">
+    <value>Crea o aggiorna una voce con i valori forniti.</value>
+  </data>
+  <data name="AddOrUpdHelpText2" xml:space="preserve">
+    <value>Per rimuovere un valore, includi il suo prefisso senza dati.</value>
+  </data>
+  <data name="AddOrUpdHelpText3" xml:space="preserve">
+    <value>Es: aggiungi chiaveVoce -p -n -u cancella tutti i campi.</value>
+  </data>
+  <data name="AssemblyNameNullError" xml:space="preserve">
+    <value>Il nome dell’assembly non può essere nullo o vuoto.</value>
+  </data>
+  <data name="CommandNullError" xml:space="preserve">
+    <value>Il comando non può essere vuoto. Inserisci un comando valido.</value>
+  </data>
+  <data name="EntriesListTitle" xml:space="preserve">
+    <value>│                Elenco delle Voci                │</value>
+  </data>
+  <data name="EntryAdded" xml:space="preserve">
+    <value>Nuova voce aggiunta con successo.</value>
+  </data>
+  <data name="EntryAlreadyExists" xml:space="preserve">
+    <value>Esiste già un'entrata con la chiave: "{0}".</value>
+  </data>
+  <data name="EntryDeleted" xml:space="preserve">
+    <value>Voce eliminata con successo.</value>
+  </data>
+  <data name="EntryNotFound" xml:space="preserve">
+    <value>Voce con la chiave specificata non trovata.</value>
+  </data>
+  <data name="EntryNullError" xml:space="preserve">
+    <value>La voce non può essere nulla.</value>
+  </data>
+  <data name="EntryUpdated" xml:space="preserve">
+    <value>Voce aggiornata con successo.</value>
+  </data>
+  <data name="ExitApp" xml:space="preserve">
+    <value>Chiusura del gestore, premi un tasto per terminare...</value>
+  </data>
+  <data name="ExitEscApp" xml:space="preserve">
+    <value>Premi [ Esc ] per uscire.</value>
+  </data>
+  <data name="FilePahtNullError" xml:space="preserve">
+    <value>Il percorso del file non può essere nullo o vuoto.</value>
+  </data>
+  <data name="HeaderKeyTable" xml:space="preserve">
+    <value>Chiave</value>
+  </data>
+  <data name="HeaderNotesTable" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="HeaderPassTable" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="HeaderSubtitle" xml:space="preserve">
+    <value>║                               Tienilo segreto, tienilo al sicuro.                                         ║</value>
+  </data>
+  <data name="HeaderUserTable" xml:space="preserve">
+    <value>Utente</value>
+  </data>
+  <data name="HelpAddExplanation" xml:space="preserve">
+    <value>Aggiunge una nuova voce al file.</value>
+  </data>
+  <data name="HelpLangExplanation" xml:space="preserve">
+    <value>Lingue disponibili:</value>
+  </data>
+  <data name="HelpCmkExplanation" xml:space="preserve">
+    <value>Cambia la password principale.</value>
+  </data>
+  <data name="HelpDelExplanation" xml:space="preserve">
+    <value>Elimina una voce dal file.</value>
+  </data>
+  <data name="HelpExitExplanation" xml:space="preserve">
+    <value>Chiude il gestore.</value>
+  </data>
+  <data name="HelpFilterExplanation1" xml:space="preserve">
+    <value>Cerca le voci che corrispondono alla parola</value>
+  </data>
+  <data name="HelpFilterExplanation2" xml:space="preserve">
+    <value>nella chiave o nel valore.</value>
+  </data>
+  <data name="HelpGetExplanation" xml:space="preserve">
+    <value>Cerca una voce nel file.</value>
+  </data>
+  <data name="HelpHelpExplanation " xml:space="preserve">
+    <value>Mostra l’aiuto per un comando specifico.</value>
+  </data>
+  <data name="HelpLsExplanation" xml:space="preserve">
+    <value>Mostra tutte le voci nel file.</value>
+  </data>
+  <data name="HelpSubtitle" xml:space="preserve">
+    <value>COMANDI DISPONIBILI</value>
+  </data>
+  <data name="HelpTitle" xml:space="preserve">
+    <value>Digita [ h ] per vedere l’elenco dei comandi.</value>
+  </data>
+  <data name="HelpUpdateExplanation" xml:space="preserve">
+    <value>Aggiorna una voce esistente nel file.</value>
+  </data>
+  <data name="InvalidEntry" xml:space="preserve">
+    <value>Voce non valida. Controlla i dati inseriti.</value>
+  </data>
+  <data name="InvalidMasterKeyError" xml:space="preserve">
+    <value>Chiave principale non valida. Controlla la password e riprova.</value>
+  </data>
+  <data name="KeyNullError" xml:space="preserve">
+    <value>La chiave non può essere nulla o vuota.</value>
+  </data>
+  <data name="KeywordNullError" xml:space="preserve">
+    <value>La parola chiave non può essere nulla o vuota.</value>
+  </data>
+  <data name="LoadFileError" xml:space="preserve">
+    <value>Errore nel caricamento delle voci dal file.</value>
+  </data>
+  <data name="MasterKeyChanged" xml:space="preserve">
+    <value>Chiave principale cambiata con successo. Ricordala.</value>
+  </data>
+  <data name="MasterKeyNullError" xml:space="preserve">
+    <value>La chiave principale non può essere nulla o vuota.</value>
+  </data>
+  <data name="MasterKeyText" xml:space="preserve">
+    <value>Inserisci la tua password:</value>
+  </data>
+  <data name="NoEntries" xml:space="preserve">
+    <value>Nessuna voce trovata.</value>
+  </data>
+  <data name="NoKeyOnGetError" xml:space="preserve">
+    <value>Devi inserire la chiave della voce (es: get miaVoce)</value>
+  </data>
+  <data name="PasswordNullError" xml:space="preserve">
+    <value>La password non può essere nulla o vuota.</value>
+  </data>
+  <data name="PlainTextNullError" xml:space="preserve">
+    <value>Il testo in chiaro non può essere nullo o vuoto.</value>
+  </data>
+  <data name="PressKeyToContinue" xml:space="preserve">
+    <value>Premi un tasto per continuare...</value>
+  </data>
+  <data name="SaveFileError" xml:space="preserve">
+    <value>Errore nel salvataggio delle voci nel file.</value>
+  </data>
+  <data name="UnrecognizedCommand" xml:space="preserve">
+    <value>Comando non riconosciuto. Riprova.</value>
+  </data>
+  <data name="UsernameNullError" xml:space="preserve">
+    <value>Il nome utente non può essere nullo o vuoto.</value>
+  </data>
+  <data name="NoLanguageOnGetError" xml:space="preserve">
+    <value>Fornisci un codice lingua (es. 'en', 'es').</value>
+  </data>
+  <data name="LanguageChanged" xml:space="preserve">
+    <value>Lingua cambiata con successo. Riavvia l'app per vedere le modifiche.</value>
+  </data>
+  <data name="FileNotFound" xml:space="preserve">
+    <value>File non trovato.</value>
+  </data>
+  <data name="LanguageNotSuported" xml:space="preserve">
+    <value>La lingua selezionata non è supportata. (Av:</value>
+  </data>
+  <data name="HeaderSubtitleMAUI" xml:space="preserve">
+    <value>Tienilo segreto, tienilo al sicuro.</value>
+  </data>
+  <data name="MasterKeyTextMAUI" xml:space="preserve">
+    <value>Inserisci la tua password...</value>
+  </data>
+  <data name="LoginBtnText" xml:space="preserve">
+    <value>Accedi</value>
+  </data>
+  <data name="SearchPlaceholder" xml:space="preserve">
+    <value>Cerca...</value>
+  </data>
+  <data name="EntriesListPageTitleMAUI" xml:space="preserve">
+    <value>Elenco delle Voci</value>
+  </data>
+  <data name="EditEntrySubtitle" xml:space="preserve">
+    <value>Modifica voce</value>
+  </data>
+  <data name="AddEntrySubtitle" xml:space="preserve">
+    <value>Aggiungi voce</value>
+  </data>
+  <data name="SettingsPageTitleMAUI" xml:space="preserve">
+    <value>Impostazioni</value>
+  </data>
+  <data name="AboutPageTitleMAUI" xml:space="preserve">
+    <value>Sobre</value>
+  </data>
+  <data name="DevelopedByTextMAUI" xml:space="preserve">
+    <value>Desenvolvido por</value>
+  </data>
+  <data name="PasswordPageTitleMAUI" xml:space="preserve">
+    <value>Cambiare la password</value>
+  </data>
+  <data name="LanguagePageTitleMAUI" xml:space="preserve">
+    <value>Lingua</value>
+  </data>
+  <data name="CloseAppTextMAUI" xml:space="preserve">
+    <value>Uscire</value>
+  </data>
+  <data name="KeyPlaceholderMAUI" xml:space="preserve">
+    <value>Inserisci una chiave...</value>
+  </data>
+  <data name="UserNamePlaceholderMAUI" xml:space="preserve">
+    <value>Inserisci un nome utente...</value>
+  </data>
+  <data name="PasswordPlaceHolderMAUI" xml:space="preserve">
+    <value>Inserisci la password...</value>
+  </data>
+  <data name="NotesPlaceholderMAUI" xml:space="preserve">
+    <value>Aggiungi note extra...</value>
+  </data>
+  <data name="SaveButtonTextMAUI" xml:space="preserve">
+    <value>Salva</value>
+  </data>
+  <data name="EntryPageTitleMAUI" xml:space="preserve">
+    <value>Dettagli di accesso</value>
+  </data>
+  <data name="ImportExportPageTitleMAUI" xml:space="preserve">
+    <value>Importa/Esporta</value>
+  </data>
+  <data name="DeletePageTitleMAUI" xml:space="preserve">
+    <value>Elimina</value>
+  </data>
+  <data name="SelectAllTextMAUI" xml:space="preserve">
+    <value>Tuttos</value>
+  </data>
+  <data name="DeleteSelectedButtonTextMAUI" xml:space="preserve">
+    <value>Elimina</value>
+  </data>
+  <data name="ConfirmDeletionHeaderMAUI" xml:space="preserve">
+    <value>Conferma eliminazione</value>
+  </data>
+  <data name="ConfirmDeletionMessageMAUI" xml:space="preserve">
+    <value>Sei sicuro di voler eliminare le voci selezionate?</value>
+  </data>
+  <data name="ConfirmDeletionYesButtonMAUI" xml:space="preserve">
+    <value>Sì</value>
+  </data>
+  <data name="ConfirmDeletionNoButtonMAUI" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="NoEntriesSelectedHeaderMAUI" xml:space="preserve">
+    <value>Nessuna voce selezionata</value>
+  </data>
+  <data name="NoEntriesSelectedMessageMAUI" xml:space="preserve">
+    <value>Seleziona almeno una voce da eliminare.</value>
+  </data>
+  <data name="NoEntriesSelectedButtonMAUI" xml:space="preserve">
+    <value>Acettare</value>
+  </data>
+  <data name="SpinnerTextMAUI" xml:space="preserve">
+    <value>Caricamento...</value>
+  </data>
+  <data name="FilePathNullError" xml:space="preserve">
+    <value>Il percorso del file non può essere nullo o vuoto</value>
+  </data>
+  <data name="AddEntryPageTitleMAUI" xml:space="preserve">
+    <value>Aggiungi voce</value>
+  </data>
+  <data name="EditEntryPageTitleMAUI" xml:space="preserve">
+    <value>Modifica voce</value>
+  </data>
+  <data name="LanguageChangeTitleMAUI" xml:space="preserve">
+    <value>Seleziona lingua</value>
+  </data>
+  <data name="ApplyLangButtonTextMAUI" xml:space="preserve">
+    <value>Applica lingua</value>
+  </data>
+  <data name="PasswordWarningText" xml:space="preserve">
+    <value>Importante: Se dimentichi la password, non potrai recuperare le informazioni e dovrai reinstallare l'applicazione.</value>
+  </data>
+  <data name="PasswordRequiredMAUI" xml:space="preserve">
+    <value>La password è richiesta.</value>
+  </data>
+  <data name="PasswordLengthMAUI" xml:space="preserve">
+    <value>La password deve essere lunga almeno 3 caratteri.</value>
+  </data>
+  <data name="PasswordMatchMAUI" xml:space="preserve">
+    <value>Le password non corrispondono.</value>
+  </data>
+  <data name="ConfirmPasswordRequiredMAUI" xml:space="preserve">
+    <value>La conferma della password è richiesta.</value>
+  </data>
+  <data name="ConfirmPasswordLengthMAUI" xml:space="preserve">
+    <value>La conferma della password deve essere lunga almeno 3 caratteri.</value>
+  </data>
+  <data name="ChangePasswordSubtitleTextMAUI" xml:space="preserve">
+    <value>Inserisci la nuova password</value>
+  </data>
+  <data name="ChangePasswordPlaceHolderMAUI" xml:space="preserve">
+    <value>Immettere la nuova password...</value>
+  </data>
+  <data name="ConfirmPasswordPlaceHolderMAUI" xml:space="preserve">
+    <value>Conferma la nuova password...</value>
+  </data>
+  <data name="ChangePasswordButtonTextMAUI" xml:space="preserve">
+    <value>Cambia password</value>
+  </data>
+  <data name="MasterKeyChangedSuccessMAUI" xml:space="preserve">
+    <value>Chiave principale cambiata con successo.</value>
+  </data>
+  <data name="MasterKeyChangedErrorMAUI" xml:space="preserve">
+    <value>Errore durante la modifica della chiave principale</value>
+  </data>
+  <data name="ExportFormatNotSupportedException" xml:space="preserve">
+    <value>Il formato di esportazione non è supportato.</value>
+  </data>
+  <data name="PasswordRequiredForEncryptedExportException" xml:space="preserve">
+    <value>È richiesta una password per l'esportazione crittografata.</value>
+  </data>
+  <data name="ImportEntriesNullError" xml:space="preserve">
+    <value>Nessuna voce da importare.</value>
+  </data>
+  <data name="LoginPageTitleMAUI" xml:space="preserve">
+    <value>Accedi</value>
+  </data>
+  <data name="DeserializationFailedException" xml:space="preserve">
+    <value>Impossibile leggere il file. Potrebbe essere danneggiato o in un formato non valido. Verifica se il file è protetto da password.</value>
+  </data>
+  <data name="DisplayAlertCancelTitleMAUI" xml:space="preserve">
+    <value>Annullato</value>
+  </data>
+  <data name="DisplayAlertErrorTitleMAUI" xml:space="preserve">
+    <value>Errore</value>
+  </data>
+  <data name="DisplayAlertInfoTitleMAUI" xml:space="preserve">
+    <value>Informazioni</value>
+  </data>
+  <data name="DisplayAlertOkButtonTextMAUI" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="DisplayAlertSuccessTitleMAUI" xml:space="preserve">
+    <value>Successo</value>
+  </data>
+  <data name="EntriesImportedMAUI" xml:space="preserve">
+    <value>{0} voci importate!</value>
+  </data>
+  <data name="ExportButtonTextMAUI" xml:space="preserve">
+    <value>Esporta</value>
+  </data>
+  <data name="ExportInfoMessageMAUI" xml:space="preserve">
+    <value>Per favore, vai manualmente alla cartella: {0}</value>
+  </data>
+  <data name="ExportPlaceHolderMAUI" xml:space="preserve">
+    <value>Password (se applicabile)</value>
+  </data>
+  <data name="ExportSubtitleMAUI" xml:space="preserve">
+    <value>Esporta voci</value>
+  </data>
+  <data name="ExportedFilePathTitleMAUI" xml:space="preserve">
+    <value>File esportato</value>
+  </data>
+  <data name="ImportButtonTextMAUI" xml:space="preserve">
+    <value>Importa</value>
+  </data>
+  <data name="ImportPlaceHolderMAUI" xml:space="preserve">
+    <value>Password (se applicabile)</value>
+  </data>
+  <data name="ImportSubtitleMAUI" xml:space="preserve">
+    <value>Importa voci</value>
+  </data>
+  <data name="NoEntriesToExportMessageMAUI" xml:space="preserve">
+    <value>Nessuna voce da esportare.</value>
+  </data>
+  <data name="NoEntriesToImportMAUI" xml:space="preserve">
+    <value>Nessuna voce è stata importata.</value>
+  </data>
+  <data name="NoFileSelectedTextMAUI" xml:space="preserve">
+    <value>Nessun file selezionato.</value>
+  </data>
+  <data name="OpenFolderNotSuportedMAUI" xml:space="preserve">
+    <value>L'apertura di cartelle non è supportata su questa piattaforma.</value>
+  </data>
+  <data name="UnsupportedFileErrorMAUI" xml:space="preserve">
+    <value>Tipo di file non supportato.</value>
+  </data>
+  <data name="WarningImportTextMAUI" xml:space="preserve">
+    <value>Avviso: Se il file contiene voci con la stessa chiave, i dati esistenti verranno sovrascritti.</value>
+  </data>
+  <data name="FileStoragePermisionTitleMAUI" xml:space="preserve">
+    <value>Permesso richiesto</value>
+  </data>
+  <data name="FileStoragePerminsionTextMAUI" xml:space="preserve">
+    <value>L'accesso all'archiviazione è necessario per importare file.</value>
+  </data>
+  <data name="AboutVersionTextMAUI" xml:space="preserve">
+    <value>Versione: 1.0.0</value>
+  </data>
+  <data name="AboutDeveloperTextMAUI" xml:space="preserve">
+    <value>Sviluppatore: Sebastián Ualde Ramírez</value>
+  </data>
+  <data name="AboutPlatformsTextMAUI" xml:space="preserve">
+    <value>Piattaforme: Android / Windows</value>
+  </data>
+  <data name="AboutLicenseTextMAUI" xml:space="preserve">
+    <value>Licenza: Gratuita, offline e senza tracciatori.</value>
+  </data>
+  <data name="AboutWhatIsItTitleMAUI" xml:space="preserve">
+    <value>🔐 Cos'è RingBearer?</value>
+  </data>
+  <data name="AboutWhatIsItTextMAUI" xml:space="preserve">
+    <value>RingBearer è un gestore di password locale, semplice e offline, pensato per chi dà valore alla privacy e al pieno controllo dei propri dati.</value>
+  </data>
+  <data name="AboutFeaturesTitleMAUI" xml:space="preserve">
+    <value>🧰 Funzionalità</value>
+  </data>
+  <data name="AboutFunctionality1TextMAUI" xml:space="preserve">
+    <value>• Crea, modifica ed elimina voci.</value>
+  </data>
+  <data name="AboutFunctionality2TextMAUI" xml:space="preserve">
+    <value>• Ricerca e filtro locali.</value>
+  </data>
+  <data name="AboutFunctionality3TextMAUI" xml:space="preserve">
+    <value>• Crittografia forte (AES-256).</value>
+  </data>
+  <data name="AboutFunctionality4TextMAUI" xml:space="preserve">
+    <value>• Sincronizzazione locale tra file.</value>
+  </data>
+  <data name="AboutFunctionality5TextMAUI" xml:space="preserve">
+    <value>• Verifica MD5 - SHA-256 (integrità dei file).</value>
+  </data>
+  <data name="AboutImportantTitleMAUI" xml:space="preserve">
+    <value>⚠️ Importante</value>
+  </data>
+  <data name="AboutImportant1TextMAUI" xml:space="preserve">
+    <value>RingBearer non si connette a internet.</value>
+  </data>
+  <data name="AboutImportant2TextMAUI" xml:space="preserve">
+    <value>Se perdi il file o la chiave principale, non potrà essere recuperato.</value>
+  </data>
+  <data name="AboutImportant3TextMAUI" xml:space="preserve">
+    <value>Tieni una copia sicura e ricorda la tua password.</value>
+  </data>
+  <data name="AboutAuthorTitleMAUI" xml:space="preserve">
+    <value>🧙 Autore</value>
+  </data>
+  <data name="AboutAuthorTextMAUI" xml:space="preserve">
+    <value>App creata da uno sviluppatore che preferisce tenere i segreti offline — e un buon caffè al posto di uno scrum giornaliero. ☕😉</value>
+  </data>
+  <data name="AboutLearnMoreTextMAUI" xml:space="preserve">
+    <value>Scopri di più</value>
+  </data>
+  <data name="AboutPrivacyPolicyTextMAUI" xml:space="preserve">
+    <value>Politica sulla Privacy</value>
+  </data>
+  <data name="AboutTermsServiceTextMAUI" xml:space="preserve">
+    <value>Termini di Servizio</value>
+  </data>
+  <data name="AboutCheckForUpdatesTextMAUI" xml:space="preserve">
+    <value>Verifica aggiornamenti</value>
+  </data>
+</root>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:RingBearer.Core.Models;assembly=RingBearer.Core"
+             xmlns:viewmodels="clr-namespace:RingBearer.Mobile.ViewModels.Interfaces"
+             x:Class="RingBearer.Mobile.Views.ImportExportPage"
+             x:DataType="viewmodels:IImportExportViewModel">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="16">
+
+            <!-- Exportar -->
+            <Border Background="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray600}}" Padding="10">
+                <VerticalStackLayout Spacing="16">
+                    <Label Text="{Binding ExportSubtitle}" FontAttributes="Bold" FontSize="Subtitle" />
+
+                    <Border Background="{AppThemeBinding Light={StaticResource FieldBackGroundColor}, Dark={StaticResource FieldBackGroundColorDark}}">
+                        <Grid ColumnDefinitions="*, Auto">
+
+                            <Entry 
+                                x:Name="exportPasswordEntry" 
+                                Text="{Binding ExportPassword}"
+                                IsPassword="{Binding IsExportPasswordHidden}" 
+                                Placeholder="{Binding ExportPlaceHolder}" 
+                            />
+
+                            <ImageButton
+                                Source="{AppThemeBinding Light=eyedark.png, Dark=eye.png}"
+                                Grid.Column="1" 
+                                BackgroundColor="Transparent"
+                                HorizontalOptions="End"
+                                VerticalOptions="Center"
+                                WidthRequest="40"
+                                HeightRequest="40"
+                                Padding="8"
+                                Clicked="OnExportPasswordVisibilityClicked"
+                            />
+                        </Grid>
+                    </Border>
+
+                    <Button 
+                        ImageSource="export.png"             
+                        Text="{Binding ExportButtonText}" 
+                        Clicked="OnExportClicked" 
+                        Background="{AppThemeBinding Light={StaticResource Gray600}, Dark={StaticResource Gray700}}" 
+                    />
+                </VerticalStackLayout>
+            </Border>
+
+            <BoxView HeightRequest="2" Color="Gray" Margin="0,20,0,20"/>
+
+            <!-- Importar -->
+            <Border Background="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray600}}" Padding="10">
+                <VerticalStackLayout Spacing="16">
+                    <Label Text="{Binding ImportSubtitle}" FontAttributes="Bold" FontSize="Subtitle"/>
+
+                    <Border Background="{AppThemeBinding Light={StaticResource FieldBackGroundColor}, Dark={StaticResource FieldBackGroundColorDark}}">
+                        <Grid ColumnDefinitions="*, Auto">
+
+                            <Entry 
+                                x:Name="importPasswordEntry" 
+                                Text="{Binding ImportPassword}"
+                                IsPassword="{Binding IsImportPasswordHidden}" 
+                                Placeholder="{Binding ImportPlaceHolder}" 
+                            />
+
+
+                            <ImageButton
+                                 Source="{AppThemeBinding Light=eyedark.png, Dark=eye.png}"
+                                 Grid.Column="1" 
+                                 BackgroundColor="Transparent"
+                                 HorizontalOptions="End"
+                                 VerticalOptions="Center"
+                                 WidthRequest="40"
+                                 HeightRequest="40"
+                                 Padding="8"
+                                 Clicked="OnImportPasswordVisibilityClicked"
+                             />         
+                        </Grid>
+                    </Border>
+
+                    <Button 
+                        ImageSource="importfile.png"
+                        Text="{Binding ImportButtonText}"  
+                        Clicked="OnImportClicked"
+                        Background="{AppThemeBinding Light={StaticResource Gray600}, Dark={StaticResource Gray700}}" 
+                    />
+
+                    <!--warning-->
+                    <Border Grid.Row="2" Background="{StaticResource WarningBackround}" Padding="8"  >
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                            <Image Source="warningdark.png" WidthRequest="50" HeightRequest="50" />
+
+                            <Label  
+                                Grid.Column="1"
+                                Text="{Binding WarningImportText}"
+                                FontSize="9"
+                                TextColor="{StaticResource WarningTextColor}"
+                                FontAttributes="Bold"
+                                Padding="10,5"
+                                LineBreakMode="WordWrap"
+                                HorizontalOptions="Center"
+                            />
+                        </Grid>
+                    </Border>
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Title>RingBearer</Title>
+    <Description>Offline password manager with secure encryption, simple commands, and multilingual support. Console-based, no internet required.</Description>
+    <Copyright>Sursoft - 2025</Copyright>
+    <PackageIcon>ringBearerIconBlack.png</PackageIcon>
+    <ApplicationIcon>ringBearerIconBlack.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="ringBearerIconBlack.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\RingBearer.Icons\ringBearerIconBlack.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.4" />
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.10" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RingBearer.Core\RingBearer.Core.csproj" />
+  </ItemGroup>
+
+</Project>

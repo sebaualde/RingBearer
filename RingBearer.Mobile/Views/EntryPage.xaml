@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:RingBearer.Mobile.ViewModels.Interfaces"         
+             xmlns:shared="clr-namespace:RingBearer.Mobile.SharedComponents" 
+             x:DataType="viewmodels:IEntryViewModel"
+             x:Class="RingBearer.Mobile.Views.EntryPage">
+
+    <ScrollView>
+        
+    <VerticalStackLayout Padding="20" Spacing="10">
+
+        <Grid>
+            <Label Text="{Binding EntryPageTitle}" FontSize="Title" />
+        </Grid>
+
+        <!--key field-->
+        <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*, Auto" ColumnSpacing="10">
+
+            <Border Grid.Row="0" Grid.Column="0">
+                <Entry 
+                    x:Name="KeyEntry" 
+                    Placeholder="{Binding KeyPlaceholder}" 
+                    Text="{Binding Model.Key}" IsEnabled="{Binding IsAddNewMode}" />
+            </Border>
+
+            <ImageButton Grid.Row="0" Grid.Column="1"       
+                Source="{AppThemeBinding Light=copydark.png, Dark=copy.png}" 
+                BackgroundColor="{AppThemeBinding Light={StaticResource FieldBackGroundColor}, Dark={StaticResource FieldBackGroundColorDark}}"
+                CornerRadius="50"
+                HeightRequest="45"
+                WidthRequest="45"
+                Padding="10"
+                Clicked="OnKeyCopyClicked"
+               />
+        </Grid>
+
+        <!--User name field-->
+        <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*, Auto" ColumnSpacing="10">
+
+            <Border Grid.Row="0" Grid.Column="0">
+                <Entry 
+                    x:Name="UserEntry" 
+                    Placeholder="{Binding UserNamePlaceholder}"
+                    Text="{Binding Model.UserName}" />
+            </Border>
+
+            <ImageButton Grid.Row="0" Grid.Column="1"        
+                Source="{AppThemeBinding Light=copydark.png, Dark=copy.png}"     
+                BackgroundColor="{AppThemeBinding Light={StaticResource FieldBackGroundColor}, Dark={StaticResource FieldBackGroundColorDark}}"
+                CornerRadius="50"
+                HeightRequest="45"
+                WidthRequest="45"
+                Padding="10"
+                Clicked="OnUserNameCopyClicked"
+                />
+        </Grid>
+
+        <!--password field-->
+        <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*, Auto" ColumnSpacing="10">
+
+            <Border Grid.Row="0" Grid.Column="0">
+                <Entry 
+                    x:Name="PasswordEntry" 
+                    Placeholder="{Binding PasswordPlaceholder}"
+                    Text="{Binding Model.Password}"/>
+            </Border>
+
+            <ImageButton Grid.Row="0" Grid.Column="1"      
+                Source="{AppThemeBinding Light=copydark.png, Dark=copy.png}"    
+                BackgroundColor="{AppThemeBinding Light={StaticResource FieldBackGroundColor}, Dark={StaticResource FieldBackGroundColorDark}}"
+                CornerRadius="50"
+                HeightRequest="45"
+                WidthRequest="45"
+                Padding="10"
+                Clicked="OnPasswordCopyClicked"
+                />
+        </Grid>
+
+        <!--notes filed-->
+        <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*, Auto" ColumnSpacing="10">
+
+            <Border Grid.Row="0" Grid.Column="0">
+
+                <Editor                    
+                    x:Name="NotesEditor" 
+                    Placeholder="{Binding NotesPlaceholder}" 
+                    Text="{Binding Model.Notes}" HeightRequest="180"/>
+
+            </Border>
+
+            <ImageButton Grid.Row="0" Grid.Column="1"     
+                Source="{AppThemeBinding Light=copydark.png, Dark=copy.png}"     
+                BackgroundColor="{AppThemeBinding Light={StaticResource FieldBackGroundColor}, Dark={StaticResource FieldBackGroundColorDark}}"
+                CornerRadius="50"
+                HeightRequest="45"
+                WidthRequest="45"
+                Padding="10"
+                Clicked="OnNotesCopyClicked"/>
+        </Grid>
+
+        <!--save button-->
+        <Button 
+            Text="{Binding SaveButtonText}" 
+            IsEnabled="{Binding IsSaveButtonEnabled}"
+            ImageSource="save.png" 
+            Margin="0,10,0,0"
+            Clicked="OnSaveClicked" />
+
+        <!--error message-->
+        <Grid IsVisible="{Binding IsErrorMessageVisible}">
+            <Border 
+                Background="{StaticResource ErrorAlertBackground}"
+                Padding="10,5" 
+                StrokeShape="RoundRectangle 5">
+                <Label
+                     TextColor="White"
+                     Text="{Binding ErrorMessage}"
+                     FontSize="12"
+                     HorizontalOptions="Center" />
+            </Border>
+        </Grid>
+
+        <!--success message-->
+        <Grid IsVisible="{Binding IsSuccessMessageVisible}">
+            <Border 
+                Background="{StaticResource SuccessAlertBackground}"  
+                Padding="10,5" 
+                StrokeShape="RoundRectangle 5">
+                <Label
+                     TextColor="White"
+                     Text="{Binding SuccessMessage}"
+                     FontSize="12"
+                     HorizontalOptions="Center" />
+            </Border>
+        </Grid>
+
+        <!-- Loader -->
+        <shared:SpinnerComponent  IsVisible="{Binding IsRefreshing}"/>
+
+    </VerticalStackLayout>
+    
+    </ScrollView>
+
+</ContentPage>

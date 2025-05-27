@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:RingBearer.Mobile.ViewModels.Interfaces"
+             xmlns:models="clr-namespace:RingBearer.Mobile.Models"  
+             x:Class="RingBearer.Mobile.Views.LanguagePage"
+             x:DataType="viewmodels:ILanguageViewModel">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="10">
+        <Label 
+            Padding="10"
+            Text="{Binding PageTitle}"
+            VerticalOptions="Center" 
+            FontSize="Subtitle"/>
+
+        <!--available languages-->
+        <CollectionView
+            x:Name="LanguageCollection"
+            SelectionMode="Single"
+            ItemsSource="{Binding Languages}"
+            SelectionChanged="OnSelectionChanged">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:LanguageDTO">
+                    <VerticalStackLayout 
+                        
+                        Background="{AppThemeBinding Light={StaticResource PageBackgroundColor}, Dark={StaticResource PageBackgroundColorDark}}">
+
+                        <Border 
+                            Background="{AppThemeBinding Light={StaticResource FieldBackGroundColor}, Dark={StaticResource FieldBackGroundColorDark}}" 
+                            Padding="10" 
+                            Margin="5">
+
+                            <Grid ColumnDefinitions="*,Auto" >
+                                <Label Text="{Binding Name}" FontSize="18" />
+                                <Image 
+                                    Grid.Column="1" 
+                                    Source="{AppThemeBinding Light=checkdark.png, Dark=check.png}" 
+                                    HeightRequest="20" 
+                                    WidthRequest="20"
+                                    IsVisible="{Binding IsSelected}"/>
+                            </Grid>
+                        </Border>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+        <!--apply button-->
+        <VerticalStackLayout IsVisible="{Binding IsApplyButtonVisible}" Padding="8" Spacing="10">
+
+            <Button 
+                ImageSource="save.png"
+                Background="{StaticResource Black}" 
+                Clicked="OnApplyLangClicked" 
+                Text="{Binding ApplyButtonText}"/>
+
+        </VerticalStackLayout>
+
+    </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

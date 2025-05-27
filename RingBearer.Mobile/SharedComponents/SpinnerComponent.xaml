@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="RingBearer.Mobile.SharedComponents.SpinnerComponent"
+             x:Name="SpinnerRoot">
+
+    <VerticalStackLayout 
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Spacing="10">
+
+        <ActivityIndicator 
+            IsVisible="True"
+            IsRunning="True"         
+            WidthRequest="60"
+            HeightRequest="60"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Color="Orange" />
+
+    </VerticalStackLayout>
+</ContentView>
